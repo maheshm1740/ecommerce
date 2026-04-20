@@ -1,0 +1,34 @@
+.list { display: flex; flex-direction: column; gap: 12px; }
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--border2); }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.orderId { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--text); }
+
+.badge { font-size: 11px; padding: 3px 11px; border-radius: 99px; font-weight: 500; }
+.pending   { background: rgba(90,155,232,.12);  color: var(--blue);  }
+.delivered { background: rgba(92,186,125,.12);  color: var(--green); }
+.cancelled { background: rgba(224,82,82,.12);   color: var(--red);   }
+
+.products { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.prodThumb {
+  width: 42px; height: 42px;
+  background: var(--bg3);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.prodNames { font-size: 13px; color: var(--text2); margin-bottom: 14px; line-height: 1.5; }
+
+.footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; border-top: 1px solid var(--border);
+}
+.date  { font-size: 12px; color: var(--text3); }
+.total { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--accent); }

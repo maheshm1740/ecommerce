@@ -1,0 +1,20 @@
+.wrap { max-width: 420px; margin: 48px auto; }
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+}
+.logoMark { font-size: 28px; color: var(--accent); margin-bottom: 16px; }
+.title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 6px; }
+.sub   { font-size: 14px; color: var(--text2); margin-bottom: 28px; }
+
+.form { display: flex; flex-direction: column; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; color: var(--text2); }
+
+.error { font-size: 13px; color: var(--red); margin-top: -4px; }
+
+.switch { text-align: center; margin-top: 20px; font-size: 14px; color: var(--text2); }
+.switch span { color: var(--accent); cursor: pointer; }
+.switch span:hover { text-decoration: underline; }

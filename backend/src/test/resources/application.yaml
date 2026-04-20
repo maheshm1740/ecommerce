@@ -1,0 +1,35 @@
+# Overrides main application.yaml during ALL tests
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop        # fresh schema per test run
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: never                  # no data.sql in tests — each test sets up its own data
+
+# Keep JWT config valid for security slice tests
+jwt:
+  secret: test-secret-key-minimum-64-characters-long-for-hmac-sha-algorithm-ok
+  expiration: 3600000
+
+cors:
+  allowed-origins: http://localhost:3000
+
+logging:
+  level:
+    org.hibernate.SQL: WARN
+    org.springframework.security: WARN
+    com.ecommerce.backend: WARN    # quieter test output

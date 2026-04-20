@@ -1,0 +1,13 @@
+.filterBar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.pill {
+  padding: 5px 14px; border-radius: 99px;
+  font-size: 13px; border: 1px solid var(--border2);
+  color: var(--text2); cursor: pointer; background: none;
+  font-family: inherit; transition: all 0.15s;
+}
+.pill:hover, .pill.active { border-color: var(--accent); color: var(--accent); background: rgba(232,201,122,.08); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}

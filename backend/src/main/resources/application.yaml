@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: ecommerce-backend
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ecommerce_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:1740}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: never
+
+server:
+  port: ${SERVER_PORT:8080}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+jwt:
+  secret: ${JWT_SECRET:ecommerce-local-dev-secret-key-minimum-64-chars-padding-here-ok}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+logging:
+  level:
+    org.hibernate.SQL: WARN
+    org.springframework.security: WARN
+    com.ecommerce.backend: INFO
+
+cors:
+  allowed-origins: http://localhost:5173
