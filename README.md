@@ -213,13 +213,30 @@ cors:
 
 ```bash
 cd ml-service
-pip install fastapi uvicorn sqlalchemy pandas scikit-learn psycopg2-binary
 ```
 
+Create and activate a virtual environment:
+
 ```bash
-# Linux / Mac
-DATABASE_URL="postgresql://postgres:yourpassword@localhost:5432/ecommerce_db" \
-uvicorn main:app --reload --port 8000
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac / Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run:
+
+```bash
+DATABASE_URL="postgresql://postgres:yourpassword@localhost:5432/ecommerce_db" uvicorn main:app --reload --port 8000
 
 # Windows CMD
 set DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/ecommerce_db
